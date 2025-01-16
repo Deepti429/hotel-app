@@ -25,12 +25,11 @@ public class SecurityConfig {
       http.addFilterBefore(jwtFilter, AuthorizationFilter.class)
 ;
       //haap
-       // http.authorizeHttpRequests().anyRequest().permitAll();
-        http.authorizeHttpRequests()
-                .requestMatchers("/api/v1/users/login","/api/v1/users/signup","/api/v1/users/signup-property-owner")
-                .permitAll()
-                .requestMatchers("/api/v1/country/addCountry").hasAnyRole("OWNER","ADMIN")
-                .anyRequest().authenticated();
+      http.authorizeHttpRequests().anyRequest().permitAll();
+//      http.authorizeHttpRequests()
+//                .requestMatchers("/api/v1/users/login", "/api/v1/users/signup", "/api/v1/users/signup-property-owner").permitAll()
+//              .requestMatchers("/api/v1/country/addCountry").hasAnyRole("OWNER", "ADMIN")
+//               .anyRequest().authenticated();
         return http.build();
     }
 }

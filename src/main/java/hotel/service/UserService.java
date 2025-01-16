@@ -23,10 +23,10 @@ public class UserService {
         if(opUser.isPresent()){
             AppUser appUser = opUser.get();
            if (BCrypt.checkpw(dto.getPassword(),appUser.getPassword())){
-               String token = jwtService.generateToken(appUser.getUsername());
-               return token;
+               return jwtService.generateToken(appUser.getUsername());
+
            }
-        }else{
+
             return null;
         }
         return null;

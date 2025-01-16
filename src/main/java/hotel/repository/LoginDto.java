@@ -1,6 +1,9 @@
 package hotel.repository;
 
 public class LoginDto {
+    private String username;
+    private String password;
+
     public String getUsername() {
         return username;
     }
@@ -17,6 +20,4 @@ public class LoginDto {
         this.password = password;
     }
 
-    private String username;
-    private String password;
 }

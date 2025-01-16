@@ -61,6 +61,7 @@ public class UserController{
         }
 
     }
+
     @PostMapping("/signup-property-owner")
     public ResponseEntity<?>createPropertyOwnerUser(
             @RequestBody AppUser user
@@ -81,4 +82,7 @@ public class UserController{
 
     }
 
+
 }
+
+

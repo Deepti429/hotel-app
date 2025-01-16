@@ -45,10 +45,12 @@ public class JWTFilter extends OncePerRequestFilter {
 
             if(opUsername.isPresent()){
 
+
                 AppUser appUser = opUsername.get();
                 UsernamePasswordAuthenticationToken
                         authenticationToken=
-                        new UsernamePasswordAuthenticationToken(appUser,null, Collections.singleton(new SimpleGrantedAuthority(appUser.getRole())));
+                        new UsernamePasswordAuthenticationToken(appUser,null, Collections.singleton
+                                (new SimpleGrantedAuthority(appUser.getRole())));
 
                 authenticationToken.setDetails(new WebAuthenticationDetails(request));
 
@@ -56,5 +58,9 @@ public class JWTFilter extends OncePerRequestFilter {
             }
         }
         filterChain.doFilter(request,response);
+
+
+
+
     }
 }

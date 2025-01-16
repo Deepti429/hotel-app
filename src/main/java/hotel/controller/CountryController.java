@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CountryController {
     @PostMapping("/addCountry")
-    public String addCountry(){
+    public String addCountry()
+    {
         return "added";
     }
 }
